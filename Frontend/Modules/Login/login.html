@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SecureProject | login</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js"
+      integrity="sha512-hI8jEOQLtyzkIiWVygLAcKPradIhgXQUl8I3lk2FUmZ8sZNbSSdHHrWo5mrmsW1Aex+oFZ+UUK7EJTVwyjiFLA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link href="../../Style/styles.css" rel="stylesheet" />
+    <script src="login.js"></script>
+    <script src="../../Crypto/Encrypt.js"></script>
+  </head>
+
+  <body style="margin-top: 2%">
+    <video
+      class="bg-video"
+      playsinline="playsinline"
+      autoplay="autoplay"
+      muted="muted"
+      loop="loop"
+    >
+      <source src="../../Media/bg.mp4" type="video/mp4" />
+    </video>
+
+    <div class="d-flex justify-content-center flex-row">
+      <div class="justify-content-center flex-column">
+        <div class="mx-5 d-flex justify-content-center flex-column masthead">
+          <h1 class="prof fst-italic lh-1 mb-4">LOGIN</h1>
+          <form id="formLogin">
+            <div class="card p-5 mx-5 my-5">
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form-control-lg"
+                  placeholder="email@email.com"
+                  style="border: 1px solid #333"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control-lg"
+                  placeholder="*******"
+                  style="border: 1px solid #333"
+                />
+              </div>
+
+              <input type="hidden" id="passwordHash" name="passwordHash" />
+
+              <div class="mb-3">
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6Lfv120gAAAAAHW9PslTOHdmBTLOG0DGfWKWgheO"
+                ></div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg mx-5"
+                  id="buttonLogin"
+                >
+                  Entrar
+                </button>
+              </div>
+              <hr />
+              <p class="text-start">
+                <a class="text-decoration-none" href="../Register/register.html"
+                  >Criar conta</a
+                >
+              </p>
+              <p class="text-start">
+                <a
+                  class="text-decoration-none"
+                  href="../ResetPassword/reset_password.html"
+                  >Recuperar senha</a
+                >
+              </p>
+
+              <h1 class="prof fst-italic lh-1 mb-4" id="noResult"></h1>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
